@@ -1,0 +1,8 @@
+dputs [info script]
+
+set test "Local Hello World"
+spawn echo Hello World
+expect {
+  "Hello World" { pass $test }
+  default { fail $test }
+}

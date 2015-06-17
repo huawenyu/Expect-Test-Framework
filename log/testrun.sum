@@ -1,0 +1,17 @@
+Test Run By wilson on Wed Jun 17 11:11:27 2015
+Native configuration is x86_64-unknown-linux-gnu
+
+		===  tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Running /home/wilson/script/testsuite/calc.test/calc.test/calc.exp ...
+PASS: add1
+PASS: multiply1
+PASS: multiply3
+
+		===  Summary ===
+
+# of expected passes		3

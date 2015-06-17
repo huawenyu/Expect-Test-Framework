@@ -1,0 +1,13 @@
+set debugMode 1
+set DEBUG 1
+
+set curdir [file dirname [info script]]
+source $curdir/lib/debug.tcl
+dputs [info script]
+
+set srcdir .
+set objdir $curdir
+set outdir $curdir/log
+
+# common library
+source $curdir/lib/box.exp

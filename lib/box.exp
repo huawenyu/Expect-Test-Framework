@@ -1,0 +1,18 @@
+#!/usr/lib/expect -f
+
+source [file dirname [info script]]/debug.tcl
+dputs [info script]
+
+proc box_login {user, passwd} {
+	expect "login:"; send "$user\r";
+	expect "Password:"; send "\r\r";
+	!# x y
+}
+
+proc box_sys_status {user, passwd} {
+	log_user 0
+	send "\r"; expect " #";
+	send "get system status\r";
+	expect "Password:"; send "\r\r";
+	log_user 1
+}

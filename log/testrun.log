@@ -1,0 +1,32 @@
+Test Run By wilson on Wed Jun 17 11:11:27 2015
+Native configuration is x86_64-unknown-linux-gnu
+
+		===  tests ===
+
+Schedule of variations:
+    unix
+
+Running target unix
+Using /usr/local/share/dejagnu/baseboards/unix.exp as board description file for target.
+Using /usr/local/share/dejagnu/config/unix.exp as generic interface file for target.
+Using /home/wilson/script/testsuite/calc.test/config/unix.exp as tool-and-target-specific interface file.
+spawn python
+Python 2.7.8 (default, Nov 10 2014, 08:19:18) 
+[GCC 4.9.2 20141101 (Red Hat 4.9.2-1)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> Running /home/wilson/script/testsuite/calc.test/calc.test/calc.exp ...
+3+4
+7
+>>> PASS: add1
+3*4
+12
+>>> PASS: multiply1
+1*2*3
+6
+>>> PASS: multiply3
+testcase /home/wilson/script/testsuite/calc.test/calc.test/calc.exp completed in 0 seconds
+
+		===  Summary ===
+
+# of expected passes		3
+runtest completed at Wed Jun 17 11:11:27 2015
