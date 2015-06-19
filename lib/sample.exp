@@ -1,0 +1,21 @@
+#!/usr/bin/expect -f
+
+log_user 0
+
+spawn -noecho /bin/bash -c "ssh wilson@localhost | tee log.1"
+set s1 $spawn_id
+
+spawn -noecho /bin/bash -c "ssh wilson@localhost | tee log.2"
+set s2 $spawn_id
+
+send -i $s1 "ping -c 1 127.0.0.1\r"
+send -i $s2 "ping -c 1 www.tired.com\r"
+
+set timeout 3
+set expect_out(buffer) "null"
+expect {
+	timeout { puts "timeout, receive nothing buffer={$expect_out(buffer)}" }
+
+	-i "$s2" -re "(.*?)bytes from 127(.*?)time=(.*)" { puts "ping ok buffer={$expect_out(buffer)}"; exp_continue }
+	-i "$s1" -re "(.*?)bytes from so(.*?)time=(.*)" { puts "ping ok buffer={$expect_out(buffer)}"; exp_continue }
+}

@@ -61,3 +61,11 @@ $ bats .
 8 directories, 14 files
 '
 ```
+
+#Howtos
+
+##ssh localhost without password
+1. ssh-keygen -t rsa
+Press enter for each line
+2. cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+3. chmod og-wx ~/.ssh/authorized_keys
